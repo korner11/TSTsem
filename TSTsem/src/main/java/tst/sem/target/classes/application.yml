@@ -1,0 +1,11 @@
+spring:
+  jackson:
+    time-zone: GMT+1
+  datasource:
+    url: jdbc:mysql://localhost/tst
+    username: root
+    password:
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
