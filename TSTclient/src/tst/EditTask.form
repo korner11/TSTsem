@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="2"/>
   </Properties>
@@ -23,10 +23,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-          </Group>
+          <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -54,20 +51,17 @@
                       </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jLabel1" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jLabel4" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jLabel3" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jLabel2" alignment="0" pref="60" max="32767" attributes="0"/>
+                              <Component id="lblTitle" alignment="0" max="32767" attributes="0"/>
+                              <Component id="lblTime" alignment="0" max="32767" attributes="0"/>
+                              <Component id="lblDate" alignment="0" max="32767" attributes="0"/>
+                              <Component id="lblDescription" alignment="0" pref="60" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jScrollPane1" pref="436" max="32767" attributes="0"/>
+                              <Component id="jScrollPane1" pref="394" max="32767" attributes="0"/>
                               <Component id="txtTitle" max="32767" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="txtTimeH" min="-2" pref="89" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="339" max="-2" attributes="0"/>
-                              </Group>
                               <Component id="txtDate" alignment="0" min="-2" pref="177" max="-2" attributes="0"/>
+                              <Component id="txtTimeH" min="-2" pref="89" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -81,24 +75,24 @@
                   <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="txtTitle" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblTitle" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblDescription" min="-2" max="-2" attributes="0"/>
                       <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="txtDate" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblDate" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblTime" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtTimeH" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="70" max="32767" attributes="0"/>
+                  <EmptySpace pref="76" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -111,12 +105,12 @@
       <SubComponents>
         <Component class="javax.swing.JTextField" name="txtTitle">
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel1">
+        <Component class="javax.swing.JLabel" name="lblTitle">
           <Properties>
             <Property name="text" type="java.lang.String" value="Title"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel2">
+        <Component class="javax.swing.JLabel" name="lblDescription">
           <Properties>
             <Property name="text" type="java.lang.String" value="Desciption"/>
           </Properties>
@@ -137,24 +131,13 @@
           </SubComponents>
         </Container>
         <Component class="org.jdesktop.swingx.JXDatePicker" name="txtDate">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtDateActionPerformed"/>
-          </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel3">
+        <Component class="javax.swing.JLabel" name="lblDate">
           <Properties>
             <Property name="text" type="java.lang.String" value="Date"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JSpinner" name="txtTimeH">
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JSpinner(m)"/>
-            <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="String PATTERN = &quot;HH:mm&quot;;&#xa;Calendar c = Calendar.getInstance();&#xa;    c.setTimeInMillis(60*1000);&#xa;    Date value = c.getTime();&#xa;&#xa;    SpinnerDateModel m = new SpinnerDateModel(&#xa;        value, null, null, Calendar.MINUTE);"/>
-            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="JSpinner sp2 = new JSpinner(m);&#xa;    final JSpinner.DateEditor editor =&#xa;      new JSpinner.DateEditor(sp2, PATTERN);&#xa;    sp2.setEditor(editor);&#xa;    editor.getTextField().addFocusListener(new FocusAdapter() {&#xa;      @Override public void focusGained(FocusEvent e) {&#xa;        EventQueue.invokeLater(new Runnable() {&#xa;          @Override public void run() {&#xa;            JTextField f = editor.getTextField();&#xa;            int i = f.getText().lastIndexOf(&quot;:&quot;);&#xa;            f.select(i+1, i+3);&#xa;          }&#xa;        });&#xa;      }&#xa;    });&#xa;&#xa;JFormattedTextField ampmspin=((JSpinner.DefaultEditor)txtTimeH.getEditor()).getTextF&#x200c;&#x200b;ield(); &#xa;ampmspin.setEditable(false);"/>
-            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="txtTimeH.setEditor(new JSpinner.DateEditor(txtTimeH, PATTERN));"/>
-          </AuxValues>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel4">
+        <Component class="javax.swing.JLabel" name="lblTime">
           <Properties>
             <Property name="text" type="java.lang.String" value="Time"/>
           </Properties>
@@ -174,6 +157,14 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JSpinner" name="txtTimeH">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JSpinner(m)"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="String PATTERN = &quot;HH:mm&quot;;&#xa;Calendar c = Calendar.getInstance();&#xa;    c.setTimeInMillis(60*1000);&#xa;    Date value = c.getTime();&#xa;&#xa;    SpinnerDateModel m = new SpinnerDateModel(&#xa;        value, null, null, Calendar.MINUTE);"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="JSpinner sp2 = new JSpinner(m);&#xa;    final JSpinner.DateEditor editor =&#xa;      new JSpinner.DateEditor(sp2, PATTERN);&#xa;    sp2.setEditor(editor);&#xa;    editor.getTextField().addFocusListener(new FocusAdapter() {&#xa;      @Override public void focusGained(FocusEvent e) {&#xa;        EventQueue.invokeLater(new Runnable() {&#xa;          @Override public void run() {&#xa;            JTextField f = editor.getTextField();&#xa;            int i = f.getText().lastIndexOf(&quot;:&quot;);&#xa;            f.select(i+1, i+3);&#xa;          }&#xa;        });&#xa;      }&#xa;    });&#xa;&#xa;JFormattedTextField ampmspin=((JSpinner.DefaultEditor)txtTimeH.getEditor()).getTextF&#x200c;&#x200b;ield(); &#xa;ampmspin.setEditable(false);"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="txtTimeH.setEditor(new JSpinner.DateEditor(txtTimeH, PATTERN));"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>

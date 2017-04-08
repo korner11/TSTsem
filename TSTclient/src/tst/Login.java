@@ -6,6 +6,8 @@
 
 package tst;
 
+import java.io.IOException;
+
 /**
  *
  * @author Michal
@@ -36,6 +38,7 @@ public class Login extends javax.swing.JFrame {
         registerBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Log In");
 
         jTextField1.setText("jTextField1");
 
@@ -101,15 +104,27 @@ public class Login extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
-    java.awt.EventQueue.invokeLater(new Runnable() {
+    
+   //  try{  //TODO check connectivity  
+         
+        java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Client().setVisible(true);
             }
         });
-    this.dispose();
+        this.dispose();
+    /*}catch(IOException e){
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Error().setVisible(true);              
+            }
+            });
+     } */
+    
     }//GEN-LAST:event_loginBtnActionPerformed
 
     private void registerBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerBtnActionPerformed
