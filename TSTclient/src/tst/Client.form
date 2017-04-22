@@ -130,8 +130,8 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="txtTitle4" alignment="0" min="-2" pref="107" max="-2" attributes="0"/>
                                       <Component id="txtTitle1" alignment="0" min="-2" pref="107" max="-2" attributes="0"/>
-                                      <Component id="txtTitle2" alignment="0" min="-2" pref="107" max="-2" attributes="0"/>
-                                      <Component id="txtTitle3" alignment="0" min="-2" pref="107" max="-2" attributes="0"/>
+                                      <Component id="txtTitle2" alignment="1" min="-2" pref="107" max="-2" attributes="0"/>
+                                      <Component id="txtTitle3" alignment="1" min="-2" pref="107" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -160,50 +160,57 @@
                                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="lblDate4" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
-                                          <Component id="txtDate4" min="-2" pref="66" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
                                           <Component id="lblDate3" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
-                                          <Component id="txtDate3" min="-2" pref="66" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="txtDate3" max="32767" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="lblDate2" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
-                                          <Component id="txtDate2" min="-2" pref="66" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="txtDate2" max="32767" attributes="0"/>
                                       </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="lblDate1" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
-                                          <Component id="txtDate1" min="-2" pref="66" max="-2" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="lblDate4" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="txtDate4" max="32767" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="lblDate1" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="txtDate1" min="-2" pref="77" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Component id="lblTime4" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace pref="20" max="32767" attributes="0"/>
-                                          <Component id="txtTime4" min="-2" pref="95" max="-2" attributes="0"/>
+                                      <Component id="lblTime4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="lblTime2" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="txtTime2" min="-2" pref="82" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Component id="lblTime1" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                              <Component id="txtTime1" min="-2" pref="82" max="-2" attributes="0"/>
+                                          </Group>
                                       </Group>
-                                      <Group type="102" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
                                           <Component id="lblTime3" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="txtTime3" min="-2" pref="95" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="txtTime3" min="-2" pref="82" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="102" attributes="0">
-                                          <Component id="lblTime1" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                          <Component id="txtTime1" min="-2" pref="95" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" attributes="0">
-                                          <Component id="lblTime2" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="txtTime2" min="-2" pref="95" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                                          <Component id="txtTime4" min="-2" pref="82" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace pref="10" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="btnEdit2" min="-2" pref="76" max="-2" attributes="0"/>
                                       <Component id="btnEdit1" min="-2" pref="76" max="-2" attributes="0"/>
@@ -259,42 +266,45 @@
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="lblTitle2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtTitle2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblDescription2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblDate2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtDate2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblTime2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtTime2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="btnEdit2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="bntDelete2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="btnSetDone2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblID2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="lblDescription2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblDate2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txtDate2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblTime2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txtTime2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btnEdit2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="bntDelete2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btnSetDone2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblID2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="txtDesc2" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="txtTitle2" alignment="1" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="txtDesc2" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblTitle2" alignment="1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="lblID3" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="txtTitle3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblDescription3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtDesc3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblTitle3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtDate3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblDate3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblTime3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtTime3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnEdit3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="bntDelete3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnSetDone3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="lblTitle3" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtTitle3" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblDescription3" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtDesc3" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblDate3" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Group type="102" alignment="3" attributes="0">
-                                  <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-                                  <Component id="txtDate3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="lblTime3" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtTime3" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnEdit3" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="bntDelete3" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnSetDone3" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblID3" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lblTitle4" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtTitle4" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -309,7 +319,7 @@
                               <Component id="btnSetDone4" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="lblID4" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="17" max="32767" attributes="0"/>
+                          <EmptySpace pref="14" max="32767" attributes="0"/>
                           <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -345,6 +355,10 @@
                 <Component class="javax.swing.JTextField" name="txtDate1">
                   <Properties>
                     <Property name="editable" type="boolean" value="false"/>
+                    <Property name="alignmentX" type="float" value="0.0"/>
+                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                      <Color id="Default Cursor"/>
+                    </Property>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblTime1">
@@ -598,7 +612,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                               <Component id="jPanel6" min="-2" pref="210" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -622,18 +636,15 @@
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  <Component id="btnPrev" min="-2" pref="174" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="btnPrev" alignment="0" pref="174" max="32767" attributes="0"/>
                           </Group>
                         </DimensionLayout>
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                                   <Component id="btnPrev" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="42" max="32767" attributes="0"/>
+                                  <EmptySpace pref="40" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -730,7 +741,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Close Task is"/>
+        <Property name="text" type="java.lang.String" value="Closest Task is"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblCloseTask">

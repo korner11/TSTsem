@@ -13,10 +13,13 @@ import java.net.ConnectException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 import org.apache.http.HttpResponse;
 import org.apache.http.ParseException;
 import org.apache.http.client.methods.HttpDelete;
@@ -42,11 +45,13 @@ public class Client extends javax.swing.JFrame {
     CloseableHttpClient httpClient;
     List<Task> undoneTasks;
     String username="dezo";
+    int tab=1;
     int page=4;
     /**
      * Creates new form Client
      */
-    public Client() {
+    public Client(String username) {
+        this.username=username;
         initComponents();
         lblID1.setVisible(false);
         lblID2.setVisible(false);
@@ -144,6 +149,8 @@ public class Client extends javax.swing.JFrame {
         lblDate1.setText("Date");
 
         txtDate1.setEditable(false);
+        txtDate1.setAlignmentX(0.0F);
+        txtDate1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         lblTime1.setText("Time");
 
@@ -307,16 +314,14 @@ public class Client extends javax.swing.JFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnPrev, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(btnPrev, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
+                .addGap(37, 37, 37)
                 .addComponent(btnPrev)
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         btnNext.setText("Next");
@@ -350,7 +355,7 @@ public class Client extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(70, 70, 70)
+                .addGap(50, 50, 50)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -388,8 +393,8 @@ public class Client extends javax.swing.JFrame {
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtTitle4, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtTitle1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtTitle2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtTitle3, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtTitle2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtTitle3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel5Layout.createSequentialGroup()
@@ -411,40 +416,44 @@ public class Client extends javax.swing.JFrame {
                         .addGap(10, 10, 10)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(lblDate4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtDate4, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addComponent(lblDate3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtDate3, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtDate3))
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addComponent(lblDate2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtDate2, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtDate2))
                             .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(lblDate1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtDate1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(jPanel5Layout.createSequentialGroup()
+                                        .addComponent(lblDate4)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtDate4))
+                                    .addGroup(jPanel5Layout.createSequentialGroup()
+                                        .addComponent(lblDate1)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtDate1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 0, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(lblTime4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
-                                .addComponent(txtTime4, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblTime4)
+                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jPanel5Layout.createSequentialGroup()
+                                    .addComponent(lblTime2)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(txtTime2, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel5Layout.createSequentialGroup()
+                                    .addComponent(lblTime1)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(txtTime1, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addComponent(lblTime3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtTime3, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(lblTime1)
                                 .addGap(18, 18, 18)
-                                .addComponent(txtTime1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtTime3, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(lblTime2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtTime2, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(40, 40, 40)
+                                .addComponent(txtTime4, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnEdit2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnEdit1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -489,36 +498,37 @@ public class Client extends javax.swing.JFrame {
                     .addComponent(lblID1))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(lblTitle2)
-                        .addComponent(txtTitle2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lblDescription2)
-                        .addComponent(lblDate2)
-                        .addComponent(txtDate2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lblTime2)
-                        .addComponent(txtTime2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnEdit2)
-                        .addComponent(bntDelete2)
-                        .addComponent(btnSetDone2)
-                        .addComponent(lblID2))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                        .addComponent(txtDesc2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblTitle3)
-                    .addComponent(txtTitle3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblDescription3)
-                    .addComponent(txtDesc3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblDate3)
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(lblDescription2)
+                                .addComponent(lblDate2)
+                                .addComponent(txtDate2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblTime2)
+                                .addComponent(txtTime2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnEdit2)
+                                .addComponent(bntDelete2)
+                                .addComponent(btnSetDone2)
+                                .addComponent(lblID2))
+                            .addComponent(txtDesc2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtTitle2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblTitle2, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblID3)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addComponent(txtDate3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(lblTime3)
-                    .addComponent(txtTime3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnEdit3)
-                    .addComponent(bntDelete3)
-                    .addComponent(btnSetDone3)
-                    .addComponent(lblID3))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtTitle3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblDescription3)
+                            .addComponent(txtDesc3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblTitle3)
+                            .addComponent(txtDate3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblDate3)
+                            .addComponent(lblTime3)
+                            .addComponent(txtTime3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnEdit3)
+                            .addComponent(bntDelete3)
+                            .addComponent(btnSetDone3))))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblTitle4)
@@ -533,7 +543,7 @@ public class Client extends javax.swing.JFrame {
                     .addComponent(bntDelete4)
                     .addComponent(btnSetDone4)
                     .addComponent(lblID4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -582,7 +592,7 @@ public class Client extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Close Task is");
+        jLabel1.setText("Closest Task is");
 
         lblCloseTask.setText("jLabel2");
 
@@ -888,6 +898,8 @@ public class Client extends javax.swing.JFrame {
     private void initTasks(){
        
         try {
+           
+            tab = jTabbedPane4.getSelectedIndex();
             undoneTasks = getAllUndoneTasks("http://localhost:8080/"+username+"/tasks");
             printTasks(undoneTasks,page);
         } catch (IOException ex) {
@@ -896,7 +908,7 @@ public class Client extends javax.swing.JFrame {
     }
     
     public void printTasks(List<Task> tasks,int page){
-        
+        int num=0;
         int index;   
         for(index=page-4;index<page;index++){
            try{
@@ -904,6 +916,7 @@ public class Client extends javax.swing.JFrame {
                
             switch(index%4){
                 case 0:
+                        num++;
                         lblID1.setText(String.valueOf(task.getId()));
                         lblTitle1.setVisible(true);
                         lblDescription1.setVisible(true);
@@ -923,6 +936,7 @@ public class Client extends javax.swing.JFrame {
                         btnSetDone1.setVisible(true);
                         break;
                 case 1: 
+                        num++;
                         lblID2.setText(String.valueOf(task.getId()));
                         lblTitle2.setVisible(true);
                         lblDescription2.setVisible(true);
@@ -942,6 +956,7 @@ public class Client extends javax.swing.JFrame {
                         btnSetDone2.setVisible(true);
                         break;
                 case 2:
+                        num++;
                         lblID3.setText(String.valueOf(task.getId()));
                         lblTitle3.setVisible(true);
                         lblDescription3.setVisible(true);
@@ -961,6 +976,7 @@ public class Client extends javax.swing.JFrame {
                         btnSetDone3.setVisible(true);
                         break;
                 case 3:
+                        num++;
                         lblTitle4.setVisible(true);
                         lblDescription4.setVisible(true);
                         lblDate4.setVisible(true);
@@ -984,18 +1000,27 @@ public class Client extends javax.swing.JFrame {
                break;
            }
         }
+       
+        num = num + (((page/4)-1 )*4);
         
-        if(page+4>tasks.size()+4){
-            btnNext.setVisible(false);
+       btnNext.setVisible(false);
+       btnPrev.setVisible(false);
+        if(page<tasks.size()){
+            btnNext.setVisible(true);
+        }
+        else if (page-4>tasks.size()){
+           btnPrev.setVisible(true);
+        }
+        else if(page-4<=0){
+             btnPrev.setVisible(false);
+           
+        }else if (page<tasks.size() && page-4>0){
+            btnNext.setVisible(true);
             btnPrev.setVisible(true);
         }
-        if(page-4<=0){
-             btnPrev.setVisible(false);
-             btnNext.setVisible(true);
-        }
        
- 
-      
+        setNearestTask(tasks);
+      lblCount.setText(num + " of " + tasks.size());
     }
     
     public void refreshTasks(){
@@ -1004,9 +1029,28 @@ public class Client extends javax.swing.JFrame {
             List<Task> tasks = getAllUndoneTasks("http://localhost:8080/"+username+"/tasks");
             setFieldsVisibility();
             printTasks(tasks,page);
+            
         } catch (IOException ex) {
             message("Error","Cloud not conncect to server");
         }
+    }
+    
+    private void setNearestTask(List<Task> tasks){
+        final long now = System.currentTimeMillis();
+        List<Date> dates = tasks.stream()
+                                   .map(Task::getTaskDate)
+                                   .collect(Collectors.toCollection(ArrayList::new));
+
+// Get date closest to "now"
+    Date closest = Collections.min(dates, new Comparator<Date>() {
+    public int compare(Date d1, Date d2) {
+        long diff1 = Math.abs(d1.getTime() - now);
+        long diff2 = Math.abs(d2.getTime() - now);
+        return Long.compare(diff1, diff2);
+    }
+});
+    
+    lblCloseTask.setText(tasks.stream().filter( c-> c.getTaskDate().equals(closest)).findFirst().get().getName());
     }
     
     private int deleteTaskByID(String url) throws IOException{

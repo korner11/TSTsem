@@ -109,18 +109,19 @@ public class Login extends javax.swing.JFrame {
 
     private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
     
-   //  try{  //TODO check connectivity  
-         
+   //  try{  //TODO check connectivity and username credentials  
+         Client cl = new Client("dezo");
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Client().setVisible(true);
+                cl.setVisible(true);
             }
         });
         this.dispose();
     /*}catch(IOException e){
+         MessageDialog msg= new MessageDialog("Error","Cloud not conncect to server");
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Error().setVisible(true);              
+                msg.setVisible(true);              
             }
             });
      } */
